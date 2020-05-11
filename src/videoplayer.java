@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class videoplayer extends JFrame implements ActionListener {
     public JPanel mainPenal = new JPanel();
@@ -26,10 +27,21 @@ public class videoplayer extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         videoplayer v = new videoplayer();
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException classNotFoundException) {
+            classNotFoundException.printStackTrace();
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
 
+        switch (command) {
+            case "open":
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.showOpenDialog(null);
+        }
     }
 }
