@@ -1,4 +1,4 @@
-package com.marco.player;
+package com.marco.player.main;
 
 import com.marco.player.ui.UI;
 import com.sun.jna.NativeLibrary;

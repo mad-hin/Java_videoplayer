@@ -1,12 +1,14 @@
 package com.marco.player.ui;
 
+import com.marco.player.main.videoplayer;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class UI {
-    com.marco.player.videoplayer player;
+    videoplayer player;
 
-    public UI(com.marco.player.videoplayer player) {
+    public UI(videoplayer player) {
         this.player = player;
     }
 
