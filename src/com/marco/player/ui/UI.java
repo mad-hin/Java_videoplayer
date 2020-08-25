@@ -40,4 +40,16 @@ public class UI {
         player.menuBar.add(player.media);
         player.mainFrame.setJMenuBar(player.menuBar);
     }
+
+    // Init the UI
+
+    // Init the UI setting
+    public void UIsetting() {
+        // set frame to be maximized
+        player.mainFrame.setExtendedState(player.mainFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        // set close to stop programme
+        player.mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // make it resizable
+        player.mainFrame.setResizable(true);
+    }
 }

@@ -3,6 +3,7 @@ package com.marco.player.main;
 import com.marco.player.ui.UI;
 import com.sun.jna.NativeLibrary;
 import uk.co.caprica.vlcj.binding.RuntimeUtil;
+import uk.co.caprica.vlcj.player.component.EmbeddedMediaPlayerComponent;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,16 +14,12 @@ public class videoplayer implements ActionListener {
     public JMenuBar menuBar;
     public JMenu media;
     public JMenuItem openFile, quitApp;
-
+    public EmbeddedMediaPlayerComponent component = new EmbeddedMediaPlayerComponent();
     UI ui = new UI(this);
 
     public videoplayer() {
-        // set frame to be maximized
-        mainFrame.setExtendedState(mainFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-        // set close to stop programme
-        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // make it resizable
-        mainFrame.setResizable(true);
+        // Initialize the UI setting
+        ui.UIsetting();
         // Initialize the Menu
         ui.InitMenu();
         // Make the frame visible
