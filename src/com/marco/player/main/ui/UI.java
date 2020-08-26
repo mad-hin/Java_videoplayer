@@ -1,4 +1,4 @@
-package com.marco.player.ui;
+package com.marco.player.main.ui;
 
 import com.marco.player.main.videoplayer;
 

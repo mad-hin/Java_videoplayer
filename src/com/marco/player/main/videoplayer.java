@@ -1,6 +1,7 @@
 package com.marco.player.main;
 
-import com.marco.player.ui.UI;
+import com.marco.player.main.logic.logic;
+import com.marco.player.main.ui.UI;
 import com.sun.jna.NativeLibrary;
 import uk.co.caprica.vlcj.binding.RuntimeUtil;
 import uk.co.caprica.vlcj.player.component.EmbeddedMediaPlayerComponent;
@@ -16,6 +17,7 @@ public class videoplayer implements ActionListener {
     public JMenuItem openFile, quitApp;
     public EmbeddedMediaPlayerComponent component = new EmbeddedMediaPlayerComponent();
     UI ui = new UI(this);
+    logic Logic = new logic(this);
 
     public videoplayer() {
         // Initialize the UI setting
@@ -50,7 +52,7 @@ public class videoplayer implements ActionListener {
         switch (command) {
             case "open":
                 JFileChooser fileChooser = new JFileChooser();
-                fileChooser.showOpenDialog(null);
+                Logic.openFile(fileChooser);
             case "quit":
                 System.exit(0);
         }
