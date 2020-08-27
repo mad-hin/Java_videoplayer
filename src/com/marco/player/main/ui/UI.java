@@ -1,14 +1,14 @@
 package com.marco.player.main.ui;
 
-import com.marco.player.main.videoplayer;
+import com.marco.player.main.player;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class UI {
-    videoplayer player;
+    player player;
 
-    public UI(videoplayer player) {
+    public UI(player player) {
         this.player = player;
     }
 
@@ -42,6 +42,11 @@ public class UI {
     }
 
     // Init the UI
+    public void UInit() {
+        player.videoPanel = player.component;
+        player.mainFrame.add(player.videoPanel, BorderLayout.CENTER);
+        player.mainFrame.add(player.buttonPanel, BorderLayout.SOUTH);
+    }
 
     // Init the UI setting
     public void UIsetting() {
