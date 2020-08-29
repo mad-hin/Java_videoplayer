@@ -16,6 +16,7 @@ public class logic {
         // open file chooser
         fileChooser.showOpenDialog(null);
         File f = fileChooser.getSelectedFile();
-        String path = f.getPath();
+        String path = f.getAbsolutePath();
+        player.component.mediaPlayer().media().play(path);
     }
 }
