@@ -43,8 +43,6 @@ public class UI {
 
     // Init the UI
     public void UInit() {
-        player.videoPanel = player.component;
-        player.mainFrame.add(player.videoPanel, BorderLayout.CENTER);
         player.mainFrame.add(player.buttonPanel, BorderLayout.SOUTH);
     }
 

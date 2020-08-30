@@ -4,6 +4,7 @@ import com.marco.player.main.logic.logic;
 import com.marco.player.main.ui.UI;
 import com.sun.jna.NativeLibrary;
 import uk.co.caprica.vlcj.binding.RuntimeUtil;
+import uk.co.caprica.vlcj.media.MediaFactory;
 import uk.co.caprica.vlcj.player.component.EmbeddedMediaPlayerComponent;
 
 import javax.swing.*;
@@ -14,12 +15,12 @@ import java.awt.event.ActionListener;
 public class player implements ActionListener {
     public JMenuBar menuBar;
     public JMenu media;
-    public JPanel videoPanel;
     public JPanel buttonPanel;
     public JButton playBnt;
     public JMenuItem openFile, quitApp;
     public JFrame mainFrame = new JFrame("Video Player");
     public EmbeddedMediaPlayerComponent component = new EmbeddedMediaPlayerComponent();
+    public MediaFactory mediaFactory;
     UI ui = new UI(this);
     logic Logic = new logic(this);
 
@@ -91,22 +92,11 @@ public class player implements ActionListener {
         gbc.anchor = GridBagConstraints.NORTH;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel1.add(media, gbc);
-        videoPanel = new JPanel();
-        videoPanel.setLayout(new GridBagLayout());
-        videoPanel.setBackground(new Color(-16777216));
-        videoPanel.setForeground(new Color(-16777216));
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.weightx = 1.0;
-        gbc.weighty = 5.0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        panel1.add(videoPanel, gbc);
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridBagLayout());
         gbc = new GridBagConstraints();
         gbc.gridx = 0;
-        gbc.gridy = 2;
+        gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.SOUTH;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel1.add(buttonPanel, gbc);
