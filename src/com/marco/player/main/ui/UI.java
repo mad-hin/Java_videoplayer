@@ -4,6 +4,8 @@ import com.marco.player.main.player;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class UI {
     player player;
@@ -48,6 +50,12 @@ public class UI {
 
     // Init the UI setting
     public void UIsetting() {
+        player.mainFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                player.component.release();
+            }
+        });
         // set frame to be maximized
         player.mainFrame.setExtendedState(player.mainFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         // set close to stop programme
