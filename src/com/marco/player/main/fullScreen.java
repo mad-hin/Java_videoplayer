@@ -8,4 +8,9 @@ final class fullScreen extends AdaptiveFullScreenStrategy {
     fullScreen(Window window) {
         super(window);
     }
+
+    @Override
+    protected void onBeforeEnterFullScreen() {
+        super.onBeforeEnterFullScreen();
+    }
 }

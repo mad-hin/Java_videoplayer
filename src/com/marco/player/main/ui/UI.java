@@ -56,6 +56,7 @@ public class UI {
                 player.component.release();
             }
         });
+        player.mainFrame.setContentPane(player.component);
         // set frame to be maximized
         player.mainFrame.setExtendedState(player.mainFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         // set close to stop programme
