@@ -16,7 +16,6 @@ public class player implements ActionListener {
     public JMenuBar menuBar;
     public JMenu media;
     public JPanel buttonPanel;
-    public JButton playBnt;
     public JMenuItem openFile, quitApp;
     public JFrame mainFrame = new JFrame("Video Player");
     public EmbeddedMediaPlayerComponent component = new EmbeddedMediaPlayerComponent();
@@ -25,8 +24,6 @@ public class player implements ActionListener {
     logic Logic = new logic(this);
 
     public player() {
-        // Initialize the UI
-        ui.UInit();
         // Initialize the UI setting
         ui.UIsetting();
         // Initialize the Menu
@@ -92,28 +89,6 @@ public class player implements ActionListener {
         gbc.anchor = GridBagConstraints.NORTH;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         panel1.add(media, gbc);
-        buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridBagLayout());
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        gbc.anchor = GridBagConstraints.SOUTH;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        panel1.add(buttonPanel, gbc);
-        playBnt = new JButton();
-        playBnt.setText("Button");
-        gbc = new GridBagConstraints();
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.weighty = 1.0;
-        gbc.anchor = GridBagConstraints.SOUTHWEST;
-        buttonPanel.add(playBnt, gbc);
-        final JPanel spacer1 = new JPanel();
-        gbc = new GridBagConstraints();
-        gbc.gridx = 1;
-        gbc.gridy = 0;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        buttonPanel.add(spacer1, gbc);
     }
 
 }

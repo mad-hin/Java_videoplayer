@@ -4,8 +4,8 @@ import uk.co.caprica.vlcj.player.embedded.fullscreen.adaptive.AdaptiveFullScreen
 
 import java.awt.*;
 
-final class fullScreen extends AdaptiveFullScreenStrategy {
-    fullScreen(Window window) {
+public final class fullScreen extends AdaptiveFullScreenStrategy {
+    public fullScreen(Window window) {
         super(window);
     }
 
